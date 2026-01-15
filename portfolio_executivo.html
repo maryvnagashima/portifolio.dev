@@ -1,874 +1,333 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Marina Nagashima</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            line-height: 1.6;
-        }
-        
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        /* CAPA */
-        .cover {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #667eea 100%);
-            height: 297mm;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            padding: 60px;
-            text-align: center;
-        }
-        
-        .cover-title {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        
-        .cover-subtitle {
-            font-size: 24px;
-            font-weight: 300;
-            margin-bottom: 60px;
-            opacity: 0.95;
-        }
-        
-        .cover-author {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .cover-role {
-            font-size: 18px;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 40px;
-        }
-        
-        .cover-contact {
-            font-size: 16px;
-            font-weight: 400;
-            opacity: 0.85;
-        }
-        
-        .cover-contact a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.4);
-            transition: border-color 0.3s;
-        }
-        
-        .cover-contact a:hover {
-            border-bottom-color: white;
-        }
-        
-        /* PÁGINAS INTERNAS */
-        .content-page {
-            padding: 60px;
-        }
-        
-        .page-header {
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .page-number {
-            position: absolute;
-            bottom: 30px;
-            right: 60px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-        
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            color: #1e3a8a;
-            margin-bottom: 16px;
-        }
-        
-        h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            margin-top: 40px;
-        }
-        
-        h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #3b82f6;
-            margin-bottom: 16px;
-            margin-top: 24px;
-        }
-        
-        p {
-            font-size: 16px;
-            color: #475569;
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-        
-        .intro-text {
-            font-size: 18px;
-            color: #334155;
-            line-height: 1.8;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border-left: 4px solid #3b82f6;
-            padding: 24px;
-            border-radius: 8px;
-            margin: 24px 0;
-        }
-        
-        .highlight-box p {
-            margin-bottom: 8px;
-        }
-        
-        .highlight-box p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 24px 0;
-        }
-        
-        .benefit-card {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s;
-        }
-        
-        .benefit-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-        }
-        
-        .benefit-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-        
-        .benefit-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 8px;
-        }
-        
-        .benefit-desc {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-        
-        .metrics-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 32px 0;
-        }
-        
-        .metric-box {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 24px;
-            border-radius: 12px;
-            text-align: center;
-        }
-        
-        .metric-value {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        
-        .metric-label {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-        
-        .problem-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 24px 0;
-        }
-        
-        .problem-box, .solution-box {
-            padding: 24px;
-            border-radius: 12px;
-        }
-        
-        .problem-box {
-            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-            border-left: 4px solid #ef4444;
-        }
-        
-        .solution-box {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-left: 4px solid #10b981;
-        }
-        
-        .box-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .problem-box .box-title {
-            color: #dc2626;
-        }
-        
-        .solution-box .box-title {
-            color: #059669;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 16px;
-        }
-        
-        li {
-            font-size: 15px;
-            color: #475569;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        
-        .flow-diagram {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border-radius: 12px;
-            padding: 32px;
-            margin: 24px 0;
-            text-align: center;
-        }
-        
-        .flow-step {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            margin: 0 8px;
-        }
-        
-        .flow-arrow {
-            display: inline-block;
-            color: #3b82f6;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 4px;
-        }
-        
-        .implementation-steps {
-            counter-reset: step-counter;
-            list-style: none;
-            margin-left: 0;
-        }
-        
-        .implementation-steps li {
-            counter-increment: step-counter;
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 24px;
-        }
-        
-        .implementation-steps li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 18px;
-        }
-        
-        .author-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border-radius: 12px;
-            padding: 32px;
-            margin-top: 40px;
-        }
-        
-        .author-section h3 {
-            color: #1e3a8a;
-            margin-top: 0;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 20px;
-        }
-        
-        .contact-item {
-            font-size: 15px;
-            color: #475569;
-        }
-        
-        .contact-item strong {
-            color: #1e3a8a;
-            display: block;
-            margin-bottom: 4px;
-        }
-        
-        @media print {
-            .page {
-                margin: 0;
-                box-shadow: none;
-            }
-            
-            body {
-                background: white;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Marina Nagashima: especialista em automação, IA e performance de marketing B2B. Projetos reais com impacto em CAC, ROAS e eficiência comercial." />
+  <title>Portfólio – Marina V. Nagashima</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 22px;
+      font-weight: 300;
+      color: #475569;
+      margin-bottom: 32px;
+    }
+    .author {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .role {
+      font-size: 18px;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact-links a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+    h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 24px;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin: 32px 0 16px;
+    }
+    p {
+      margin-bottom: 16px;
+      font-size: 17px;
+      color: #334155;
+    }
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+      font-size: 17px;
+      color: #475569;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.3s;
+    }
+    .card:hover {
+      border-color: #3b82f6;
+    }
+    .card h4 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1e3a8a;
+    }
+    .card p {
+      font-size: 15px;
+      color: #64748b;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .badge {
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .highlight {
+      background: #f0f9ff;
+      border-left: 4px solid #3b82f6;
+      padding: 24px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 2px solid #e2e8f0;
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      .container { padding: 40px 16px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- PÁGINA 1: CAPA -->
-    <div class="page cover">
-        <div class="cover-title">Automação e IA<br>para Performance de Marketing</div>
-        <div class="cover-subtitle">Como tecnologia e dados aceleram resultados em ambientes B2B</div>
-        <div style="margin-top: 80px;">
-            <div class="cover-author">Marina V. Nagashima</div>
-            <div class="cover-role">Especialista em Mídia Paga, Performance Digital & Growth Marketing</div>
-            <div class="cover-contact">
-                <a href="mailto:marina_vborges@hotmail.com">marina_vborges@hotmail.com</a><br>
-                (13) 98152-5521<br>
-                <a href="https://linkedin.com/in/marinanagashina/" target="_blank">linkedin.com/in/marinanagashina</a>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+    <!-- CAPA -->
+    <header>
+      <h1>Automação e IA para Performance de Marketing</h1>
+      <p class="subtitle">Como tecnologia e dados aceleram resultados em ambientes B2B</p>
+      <div class="author">Marina V. Nagashima</div>
+      <div class="role">Especialista em Mídia Paga, Performance Digital & Growth Marketing</div>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/marinanagashima" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zVFYRVThdxFCebUNLz1pKPTr4gUUJs2CtaOWFSOoLhPLdK4JlbXayG0tRyGm8b-d0LtXeDRUQ?gv=true" target="_blank" rel="noopener">📅 Agende uma conversa</a>
+      </div>
+    </header>
 
-    <!-- PÁGINA 2: VISÃO GERAL -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Visão Geral</h1>
-            <p class="intro-text">Como IA e Automação aumentam eficiência e reduzem CAC em Marketing B2B</p>
-        </div>
-        
-        <p class="intro-text">Em ambientes de alta competitividade e orçamentos robustos, a diferença entre crescimento sustentável e desperdício de recursos está na capacidade de tomar decisões rápidas e orientadas por dados.</p>
-        
-        <p class="intro-text">Este documento apresenta dois projetos aplicados que demonstram como automação e inteligência artificial podem ser implementadas para resolver problemas críticos de performance em marketing digital.</p>
-        
-        <div class="highlight-box">
-            <p><strong>Contexto de Aplicação:</strong></p>
-            <p>Os projetos descritos foram desenvolvidos e aplicados em contexto real, com dados, marcas e ferramentas específicas anonimizados por confidencialidade. O foco deste material é apresentar a arquitetura conceitual, lógica de decisão e impactos de negócio, que são totalmente replicáveis em diferentes organizações.</p>
-        </div>
-        
-        <h2>Oportunidades Identificadas</h2>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <div class="benefit-title">Redução de Custo Operacional</div>
-                <div class="benefit-desc">Automação de processos manuais que consomem tempo e recursos humanos qualificados</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">🎯</div>
-                <div class="benefit-title">Aumento de Eficiência de Mídia</div>
-                <div class="benefit-desc">Otimização contínua de investimento baseada em performance real de cada canal</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">✨</div>
-                <div class="benefit-title">Melhor Qualificação de Leads</div>
-                <div class="benefit-desc">Redução de leads desqualificados chegando ao time comercial</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">📊</div>
-                <div class="benefit-title">Decisões Orientadas por Dados</div>
-                <div class="benefit-desc">Substituição de decisões intuitivas por análises preditivas e cenários simulados</div>
-            </div>
-        </div>
-        
-        <h2>Projetos Apresentados</h2>
-        
-        <p><strong>Projeto 1: Automação de Coleta e Triagem de Leads com IA</strong><br>
-        Sistema que qualifica leads em tempo real, reduzindo tempo de resposta de dias para minutos e aumentando taxa de conversão em vendas.</p>
-        
-        <p><strong>Projeto 2: BudgetMind - Sistema Inteligente de Otimização de Budget</strong><br>
-        Plataforma que consolida dados de múltiplos canais e sugere redistribuição de investimento baseada em performance e objetivos de negócio.</p>
-        
-        <div class="page-number">Página 2</div>
-    </div>
+    <!-- PROJETO 1 -->
+    <section>
+      <h2>Projeto 1: Sistema de Qualificação de Leads com IA via WhatsApp</h2>
+      
+      <h3>O Problema</h3>
+      <p>Empresas de médio porte enfrentam desafios críticos na aquisição via WhatsApp:</p>
+      <ul>
+        <li><strong>Conformidade LGPD:</strong> Dificuldade em capturar consentimento explícito</li>
+        <li><strong>Velocidade de resposta:</strong> Leads aguardam dias para primeiro contato</li>
+        <li><strong>Triagem manual:</strong> Time comercial perde tempo com leads desqualificados</li>
+        <li><strong>Escalabilidade limitada:</strong> Programas de indicação (MGM) não escalam</li>
+      </ul>
 
-    <!-- PÁGINA 3: PROJETO 1 - PROBLEMA E OBJETIVO -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Projeto 1: Automação de Qualificação de Leads com IA</h1>
-        </div>
-        
-        <div class="problem-solution">
-            <div class="problem-box">
-                <div class="box-title">❌ Problema Identificado</div>
-                <ul>
-                    <li>Leads desqualificados chegando ao time comercial</li>
-                    <li>Alto custo por lead aquisição com baixa taxa de conversão em vendas</li>
-                    <li>Tempo humano desperdiçado em triagem manual</li>
-                    <li>Tempo de resposta ao lead de até 3 dias</li>
-                    <li>Falta de critérios objetivos de priorização</li>
-                </ul>
-            </div>
-            
-            <div class="solution-box">
-                <div class="box-title">✅ Objetivo de Negócio</div>
-                <ul>
-                    <li>Qualificar leads automaticamente antes de enviar ao comercial</li>
-                    <li>Priorizar leads com maior intenção de compra</li>
-                    <li>Reduzir CAC e acelerar tempo de resposta</li>
-                    <li>Aumentar eficiência do time de vendas</li>
-                    <li>Melhorar taxa de conversão do funil</li>
-                </ul>
-            </div>
-        </div>
-        
-        <h2>Arquitetura da Solução</h2>
-        
-        <div class="flow-diagram">
-            <div class="flow-step">Mídia Paga</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Formulário / LP</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Integração API</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">IA em Tempo Real</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Score + Roteamento</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Comercial</div>
-        </div>
-        
-        <h2>O que a IA Faz Exatamente</h2>
-        
-        <p>A solução utiliza processamento de linguagem natural e modelos de classificação para analisar cada lead em tempo real e determinar:</p>
-        
-        <h3>1. Identificação de Intenção</h3>
-        <p>Classifica o nível de urgência e interesse do lead baseado em campos preenchidos, palavras-chave e comportamento digital (se disponível).</p>
-        
-        <ul>
-            <li><strong>Intenção Alta:</strong> Demonstra urgência, necessidade clara e budget disponível</li>
-            <li><strong>Intenção Média:</strong> Interesse confirmado mas sem urgência imediata</li>
-            <li><strong>Intenção Baixa:</strong> Busca informacional ou perfil desqualificado</li>
-        </ul>
-        
-        <h3>2. Verificação de Fit com ICP (Ideal Customer Profile)</h3>
-        <p>Valida se o lead atende aos critérios definidos de perfil ideal de cliente (porte da empresa, segmento, cargo do lead, região, etc.).</p>
-        
-        <h3>3. Priorização e Roteamento Automático</h3>
-        <ul>
-            <li><strong>Leads com Intenção Alta + Fit com ICP:</strong> Enviados imediatamente ao comercial com notificação prioritária</li>
-            <li><strong>Leads com Intenção Média:</strong> Entram em fluxo de nutrição automático (email, WhatsApp, remarketing)</li>
-            <li><strong>Leads Desqualificados:</strong> Descartados ou adicionados a audiências de retargeting de baixa prioridade</li>
-        </ul>
-        
-        <div class="page-number">Página 3</div>
-    </div>
+      <h3>A Solução</h3>
+      <p>Sistema de automação conversacional que integra captura, qualificação e distribuição de leads em tempo real via WhatsApp, mantendo conformidade total com LGPD.</p>
 
-    <!-- PÁGINA 4: PROJETO 1 - RESULTADOS -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Projeto 1: Resultados e Impacto</h1>
-        </div>
-        
-        <div class="metrics-row">
-            <div class="metric-box">
-                <div class="metric-value">+38%</div>
-                <div class="metric-label">Aumento em vendas fechadas</div>
-            </div>
-            
-            <div class="metric-box">
-                <div class="metric-value">3 dias → minutos</div>
-                <div class="metric-label">Redução no tempo de primeiro contato</div>
-            </div>
-            
-            <div class="metric-box">
-                <div class="metric-value">100%</div>
-                <div class="metric-label">Leads triados automaticamente</div>
-            </div>
-        </div>
-        
-        <h2>Onde Isso Se Conecta com o Negócio</h2>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">⚡</div>
-                <div class="benefit-title">Velocidade de Resposta</div>
-                <div class="benefit-desc">Contato com leads quentes em minutos, aumentando drasticamente a taxa de conversão</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">🎯</div>
-                <div class="benefit-title">Eficiência do Time Comercial</div>
-                <div class="benefit-desc">Vendedores focam apenas em leads qualificados, maximizando produtividade</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <div class="benefit-title">Redução de CAC</div>
-                <div class="benefit-desc">Melhor aproveitamento de investimento em mídia com maior conversão</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
-                <div class="benefit-title">Previsibilidade de Receita</div>
-                <div class="benefit-desc">Fluxo consistente de leads qualificados permite projeções mais confiáveis</div>
-            </div>
-        </div>
-        
-        <h2>Aprendizados Estratégicos</h2>
-        
-        <div class="highlight-box">
-            <p><strong>1. Automação não substitui estratégia</strong></p>
-            <p>A IA precisa de critérios claros de qualificação definidos pelo negócio. Sem ICP bem estruturado, a automação amplifica problemas ao invés de resolvê-los.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>2. IA funciona melhor com regras claras</strong></p>
-            <p>Modelos de classificação precisam de dados históricos e feedback contínuo. Quanto mais clara a definição de "lead qualificado", melhor a performance do sistema.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>3. Integração Marketing + Comercial é crítica</strong></p>
-            <p>O sucesso depende de alinhamento total entre as áreas sobre critérios de qualificação e processo de follow-up.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>4. Dados bem estruturados > volume de dados</strong></p>
-            <p>Poucos dados relevantes e bem organizados geram melhor performance do que grande volume de informações desorganizadas.</p>
-        </div>
-        
-        <div class="page-number">Página 4</div>
-    </div>
+      <div class="tech-stack">
+        <span class="badge">n8n (Render.com)</span>
+        <span class="badge">Meta Cloud API</span>
+        <span class="badge">Groq + Llama 3</span>
+        <span class="badge">Airtable / Google Sheets</span>
+        <span class="badge">GA4 + Data Studio</span>
+      </div>
 
-    <!-- PÁGINA 5: PROJETO 2 - PROBLEMA E OBJETIVO -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Projeto 2: BudgetMind - Sistema de Otimização de Budget</h1>
-        </div>
-        
-        <div class="problem-solution">
-            <div class="problem-box">
-                <div class="box-title">❌ Problema Identificado</div>
-                <ul>
-                    <li>Planejamento de budget manual e demorado</li>
-                    <li>Dificuldade de redistribuir verba entre múltiplos canais</li>
-                    <li>Decisões reativas ao invés de preditivas</li>
-                    <li>Falta de visão consolidada de performance</li>
-                    <li>Análise complexa com múltiplos produtos e objetivos simultâneos</li>
-                </ul>
-            </div>
-            
-            <div class="solution-box">
-                <div class="box-title">✅ Objetivo de Negócio</div>
-                <ul>
-                    <li>Otimizar investimento entre canais baseado em performance real</li>
-                    <li>Apoiar decisões com dados históricos e projeções</li>
-                    <li>Ganhar velocidade e eficiência operacional</li>
-                    <li>Simular cenários antes de implementar mudanças</li>
-                    <li>Maximizar ROI do investimento em mídia</li>
-                </ul>
-            </div>
-        </div>
-        
-        <h2>Como Funciona o BudgetMind</h2>
-        
-        <h3>1. Consolidação de Dados Multicanal</h3>
-        <p>O sistema conecta-se a todas as plataformas de mídia (Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, Amazon Ads, Pinterest Ads) e consolida dados de performance em uma única base.</p>
-        
-        <h3>2. Análise de Performance por Produto/Objetivo</h3>
-        <p>Processa métricas críticas para cada canal:</p>
-        <ul>
-            <li><strong>ROAS (Return on Ad Spend):</strong> Retorno sobre investimento em mídia</li>
-            <li><strong>CPA (Cost per Acquisition):</strong> Custo por aquisição de cliente</li>
-            <li><strong>CAC (Customer Acquisition Cost):</strong> Custo total de aquisição incluindo todos os gastos</li>
-            <li><strong>LTV (Lifetime Value):</strong> Valor total que o cliente gera ao longo do tempo</li>
-            <li><strong>Taxa de Conversão:</strong> Eficiência do funil em cada canal</li>
-            <li><strong>Ticket Médio:</strong> Valor médio por transação</li>
-        </ul>
-        
-        <h3>3. Sugestão de Redistribuição Inteligente</h3>
-        <p>Com base nos dados históricos e objetivos definidos (aquisição, retenção, expansão), o sistema sugere ajustes na alocação de budget:</p>
-        <ul>
-            <li>Identifica canais com performance acima da média que podem receber mais investimento</li>
-            <li>Sinaliza canais com eficiência decrescente que precisam de otimização ou redução de budget</li>
-            <li>Considera sazonalidade e padrões históricos na recomendação</li>
-        </ul>
-        
-        <h3>4. Simulação de Cenários</h3>
-        <p>Permite testar diferentes alocações de budget antes de implementar, projetando impacto esperado em vendas, leads e ROI.</p>
-        
-        <div class="page-number">Página 5</div>
-    </div>
+      <h3>Resultados Mensurados</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Métrica</th>
+            <th>Antes</th>
+            <th>Depois</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Taxa de Consentimento</td><td>—</td><td>94%</td><td>✅ LGPD sem fricção</td></tr>
+          <tr><td>CPA</td><td>Média mercado</td><td>–35%</td><td>💰 Redução significativa</td></tr>
+          <tr><td>Tempo de Resposta</td><td>3 dias</td><td>&lt;2 segundos</td><td>⚡ Automação total</td></tr>
+          <tr><td>Conversão Lead→Venda</td><td>Baseline</td><td>+38%</td><td>📈 Fechamento acelerado</td></tr>
+        </tbody>
+      </table>
 
-    <!-- PÁGINA 6: PROJETO 2 - RESULTADOS E ARQUITETURA -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Projeto 2: Arquitetura e Impacto</h1>
-        </div>
-        
-        <h2>Fluxo de Trabalho Assistido</h2>
-        
-        <div class="flow-diagram">
-            <div class="flow-step">Coleta Automática</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Análise IA</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Recomendação</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Validação Humana</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Execução</div>
-        </div>
-        
-        <p><strong>Importante:</strong> O BudgetMind é um sistema assistido, não automático. A IA analisa dados e sugere otimizações, mas a decisão final sempre passa por validação humana, garantindo que fatores estratégicos e contextuais sejam considerados.</p>
-        
-        <h2>Impacto Observado</h2>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">💡</div>
-                <div class="benefit-title">Decisões Mais Rápidas</div>
-                <div class="benefit-desc">Redução de tempo de análise de dias para minutos, permitindo ajustes táticos ágeis</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">🎯</div>
-                <div class="benefit-title">Redução de Desperdício</div>
-                <div class="benefit-desc">Identificação proativa de canais com performance abaixo do esperado</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">📊</div>
-                <div class="benefit-title">Visibilidade Total</div>
-                <div class="benefit-desc">Clareza sobre performance de cada canal, produto e objetivo simultaneamente</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">⚙️</div>
-                <div class="benefit-title">Gestão Escalável</div>
-                <div class="benefit-desc">Capacidade de gerenciar múltiplos produtos e canais sem aumento proporcional de equipe</div>
-            </div>
-        </div>
-        
-        <h2>Casos de Uso Práticos</h2>
-        
-        <h3>Situação 1: Black Friday</h3>
-        <p>Durante eventos sazonais de alto volume, o sistema identifica em tempo real quais canais estão convertendo melhor e sugere redistribuição ágil de budget para maximizar ROI no período crítico.</p>
-        
-        <h3>Situação 2: Lançamento de Produto</h3>
-        <p>Na fase inicial de um novo produto, o BudgetMind testa diferentes canais e rapidamente identifica onde o produto tem melhor aceitação, permitindo concentrar investimento nas plataformas mais eficientes.</p>
-        
-        <h3>Situação 3: Otimização Contínua</h3>
-        <p>Em operação dia a dia, o sistema monitora performance semanal e sugere pequenos ajustes incrementais que, acumulados, geram ganhos significativos de eficiência.</p>
-        
-        <div class="page-number">Página 6</div>
-    </div>
+      <div class="highlight">
+        <p><strong>Aprendizados Técnicos:</strong> Consentimento como feature aumentou opt-in para 94%. Llama 3 com poucos dados estruturados supera modelos maiores com dados desorganizados. Feedback loop CRM→IA é essencial para retreinamento contínuo.</p>
+      </div>
+    </section>
 
-    <!-- PÁGINA 7: COMO IMPLEMENTAR -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Como Implementar Essas Soluções na Sua Empresa</h1>
-        </div>
-        
-        <p class="intro-text">A implementação de automação e IA em marketing exige uma abordagem estruturada que equilibra ambição com pragmatismo. O caminho ideal passa por quatro etapas:</p>
-        
-        <h2>Framework de Implementação</h2>
-        
-        <ul class="implementation-steps">
-            <li>
-                <strong>Diagnóstico de Oportunidades</strong><br>
-                Identificação dos pontos onde tempo, budget ou oportunidades estão sendo desperdiçados. Análise de processos manuais que podem ser automatizados e decisões que podem ser apoiadas por dados.
-            </li>
-            
-            <li>
-                <strong>Priorização de Projetos</strong><br>
-                Seleção das iniciativas com maior impacto potencial e menor complexidade de implementação. Foco em resolver uma dor clara do negócio que tenha apoio das áreas envolvidas (Marketing, Comercial, TI).
-            </li>
-            
-            <li>
-                <strong>MVP Funcional (30-60 dias)</strong><br>
-                Desenvolvimento de versão inicial que já entrega valor, mesmo que simplificada. O objetivo é gerar resultado rápido que justifique investimento em expansão.
-            </li>
-            
-            <li>
-                <strong>Escala e Refinamento</strong><br>
-                Com MVP validado, expansão para outros canais, produtos ou processos. Refinamento contínuo baseado em feedback e dados de performance.
-            </li>
-        </ul>
-        
-        <h2>Requisitos Técnicos Típicos</h2>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🔌</div>
-                <div class="benefit-title">Integrações</div>
-                <div class="benefit-desc">APIs das plataformas de mídia, CRM, ferramentas de analytics e automação de marketing</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">💾</div>
-                <div class="benefit-title">Infraestrutura de Dados</div>
-                <div class="benefit-desc">Base de dados estruturada para consolidar informações de múltiplas fontes</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">🤖</div>
-                <div class="benefit-title">Camada de IA</div>
-                <div class="benefit-desc">Modelos de classificação, análise preditiva ou processamento de linguagem natural</div>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">👥</div>
-                <div class="benefit-title">Alinhamento de Áreas</div>
-                <div class="benefit-desc">Colaboração entre Marketing, Comercial, TI e Produto para garantir adoção</div>
-            </div>
-        </div>
-        
-        <h2>Fatores Críticos de Sucesso</h2>
-        
-        <div class="highlight-box">
-            <p><strong>1. Começar pequeno, pensar grande</strong></p>
-            <p>MVPs focados geram aprendizados rápidos e reduzem risco de projetos grandes que falham.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>2. Ter patrocínio executivo</strong></p>
-            <p>Projetos que envolvem múltiplas áreas precisam de sponsor em nível de liderança para remover obstáculos.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>3. Medir impacto desde o dia 1</strong></p>
-            <p>Definir métricas claras de sucesso antes de começar e acompanhar evolução semanalmente.</p>
-        </div>
-        
-        <div class="highlight-box">
-            <p><strong>4. Iterar baseado em feedback</strong></p>
-            <p>Automação perfeita não existe no primeiro dia. Ciclo rápido de ajustes é essencial.</p>
-        </div>
-        
-        <div class="page-number">Página 7</div>
-    </div>
+    <!-- PROJETO 2 -->
+    <section>
+      <h2>Projeto 2: BudgetMind – Sistema Inteligente de Otimização de Budget</h2>
+      
+      <h3>O Problema</h3>
+      <p>Gestores de mídia paga em empresas multicanal enfrentam:</p>
+      <ul>
+        <li>Análise manual demorada (2+ horas/dia)</li>
+        <li>Decisões reativas, não preditivas</li>
+        <li>Dados fragmentados entre Google, Meta, Shopee, TikTok</li>
+        <li>Falta de visão geográfica (saturação por região)</li>
+      </ul>
 
-    <!-- PÁGINA 8: SOBRE A AUTORA -->
-    <div class="page content-page">
-        <div class="page-header">
-            <h1>Sobre a Autora</h1>
-        </div>
-        
-        <div class="author-section">
-            <h3>Marina V. Nagashima</h3>
-            <p>Especialista Sênior em Mídia Paga, Performance Digital e Growth Marketing com mais de 10 anos de experiência liderando estratégias omnichannel para aquisição, retenção e expansão de receita em ambientes de alta competitividade.</p>
-            
-            <p>Atuação comprovada no planejamento, execução e otimização de campanhas integradas em Google Ads, Meta Ads, TikTok Ads e Amazon Ads, aliando expertise em mídia paga, CRM, automação de marketing e customer journey optimization.</p>
-            
-            <p>Perfil orientado a resultados, com mentalidade de crescimento sustentável, foco em eficiência de investimento e habilidade em formar parcerias estratégicas entre áreas.</p>
-        </div>
-        
-        <h2>Experiência Relevante</h2>
-        
-        <h3>Kiss New York (Empresa Multinacional)</h3>
-        <p><strong>Especialista em Mídia Paga & Performance</strong> | Abril 2022 - Presente</p>
-        <ul>
-            <li>Gestão de budget superior a R$500K/mês com ROAS médio de 4.5x</li>
-            <li>Integração de CRM e automação de jornada, elevando LTV em 25%</li>
-            <li>Construção de dashboards executivos e redução de CAC em 30%</li>
-            <li>Liderança de campanhas sazonais com aumento de 30% em receita</li>
-        </ul>
-        
-        <h3>Experiência Adicional</h3>
-        <ul>
-            <li><strong>Não + Pelo (Franquias):</strong> Coordenador de Mídia e Performance - Expansão de 8 para 12 unidades</li>
-            <li><strong>Marfin (Agência):</strong> Analista Sênior - Gestão de carteira de 21 clientes simultaneamente</li>
-            <li><strong>GoodGames Studios:</strong> Analista de Growth Marketing - Estratégias de monetização e engajamento</li>
-        </ul>
-        
-        <h2>Formação e Certificações</h2>
-        <ul>
-            <li>MBA em Big Data Analytics - UniBF (em andamento)</li>
-            <li>Pós-graduação em Marketing - UniBF (em andamento)</li>
-            <li>Data Engineer de IA Python - DataCamp</li>
-            <li>Google Ads Certification (Search, Display, Shopping, Performance Max)</li>
-            <li>Meta Blueprint Certification (Media Buying Professional)</li>
-            <li>Google Analytics 4 e Data-Driven Marketing</li>
-        </ul>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>Email</strong>
-                marina_vborges@hotmail.com
-            </div>
-            
-            <div class="contact-item">
-                <strong>Telefone</strong>
-                (13) 98152-5521
-            </div>
-            
-            <div class="contact-item">
-                <strong>LinkedIn</strong>
-                linkedin.com/in/marinanagashina
-            </div>
-            
-            <div class="contact-item">
-                <strong>Localização</strong>
-                São Paulo, SP
-            </div>
-        </div>
-        
-        <div class="highlight-box" style="margin-top: 40px;">
-            <p style="text-align: center; font-size: 17px; margin-bottom: 0;">
-                <strong>Interessado em discutir como essas soluções podem ser aplicadas na sua organização?</strong><br>
-                Entre em contato para uma conversa estratégica.
-            </p>
-        </div>
-        
-        <div class="page-number">Página 8</div>
-    </div>
+      <h3>A Solução</h3>
+      <p>Plataforma SaaS que consolida dados multicanal, identifica padrões e sugere redistribuição de budget em tempo real com IA.</p>
 
+      <div class="tech-stack">
+        <span class="badge">React + TypeScript</span>
+        <span class="badge">Tailwind CSS</span>
+        <span class="badge">Google Cloud Functions</span>
+        <span class="badge">Gemini AI</span>
+        <span class="badge">Firestore + BigQuery</span>
+        <span class="badge">Google Ads / Meta / TikTok APIs</span>
+      </div>
+
+      <h3>Funcionalidades Core</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4>📊 Consolidação Multicanal</h4>
+          <p>Coleta automática de 5+ plataformas com retry inteligente</p>
+        </div>
+        <div class="card">
+          <h4>🗺️ Análise Geográfica</h4>
+          <p>Heatmaps por País → Estado → Cidade</p>
+        </div>
+        <div class="card">
+          <h4>🔔 Alertas Inteligentes</h4>
+          <p>Críticos, oportunidades e sistema</p>
+        </div>
+        <div class="card">
+          <h4>🤖 Otimizador com Gemini</h4>
+          <p>Recomendações baseadas em 90 dias de histórico</p>
+        </div>
+      </div>
+
+      <h3>Resultados</h3>
+      <ul>
+        <li><strong>ROAS médio:</strong> 3.2x (vs. mercado: 2.5x)</li>
+        <li><strong>Tempo de análise:</strong> 2h/dia → 10 minutos</li>
+        <li><strong>Implementação:</strong> 80% das agências veem valor na 1ª semana</li>
+        <li><strong>Cobertura:</strong> 27 estados + LATAM (AR, CL, MX, CO)</li>
+      </ul>
+
+      <div class="highlight">
+        <p><strong>Caso Prático:</strong> Durante Black Friday, o sistema identificou que Meta Reels convertia 40% melhor que Google Shopping e sugeriu realocação de R$50k — maximizando ROI no período crítico.</p>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section>
+      <h2>Sobre a Autora</h2>
+      <p>Marina V. Nagashima é especialista sênior em mídia paga e growth marketing, com formação em <strong>Análise e Desenvolvimento de Sistemas</strong> e mais de 10 anos de experiência em ambientes de alta performance.</p>
+      <p>Seu diferencial está na interseção entre <strong>tecnologia, dados e estratégia de negócios</strong> — construindo soluções escaláveis que resolvem problemas reais de marketing B2B e e-commerce.</p>
+      
+      <h3>Experiência Relevante</h3>
+      <ul>
+        <li><strong>Kiss New York:</strong> Gestão de budget >R$500K/mês, ROAS 4.5x, redução de CAC em 30%</li>
+        <li><strong>Não + Pelo:</strong> Expansão de 8 para 12 unidades via performance digital</li>
+        <li><strong>GoodGames Studios:</strong> Estratégias de monetização e engajamento</li>
+      </ul>
+
+      <h3>Formação</h3>
+      <ul>
+        <li>Bacharelado em Sistemas de Informação</li>
+        <li>MBA em Big Data Analytics (em andamento)</li>
+        <li>Certificações: Google Ads, Meta Blueprint, DataCamp (Data Engineer de IA)</li>
+      </ul>
+    </section>
+
+    <!-- FOOTER / CTA FINAL -->
+    <footer>
+      <p>Interessado em implementar essas soluções na sua empresa?<br>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zVFYRVThdxFCebUNLz1pKPTr4gUUJs2CtaOWFSOoLhPLdK4JlbXayG0tRyGm8b-d0LtXeDRUQ?gv=true" target="_blank" rel="noopener">📅 Agende uma conversa estratégica</a></p>
+    </footer>
+  </div>
 </body>
 </html>
