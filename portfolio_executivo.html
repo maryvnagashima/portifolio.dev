@@ -16,6 +16,8 @@
       --gray-400: #94a3b8;
       --white: #ffffff;
       --light-bg: #f9fafb;
+      --green-50: #f0fdf4;
+      --green-600: #10b981;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -142,12 +144,48 @@
       color: var(--gray-600);
     }
     .highlight {
-      background: #f0fdf4;
-      border-left: 4px solid #10b981;
+      background: var(--green-50);
+      border-left: 4px solid var(--green-600);
       padding: 24px;
       border-radius: 0 12px 12px 0;
       margin: 24px 0;
     }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .feature-card {
+      background: var(--blue-50);
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+    .feature-card strong {
+      color: var(--blue-900);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .roadmap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .roadmap-item {
+      background: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .roadmap-item.done { color: var(--green-600); }
+    .roadmap-item.next { color: #f59e0b; }
+    .roadmap-item.future { color: #8b5cf6; }
+
     .cta-footer {
       text-align: center;
       padding: 60px 24px;
@@ -200,12 +238,12 @@
         <div class="card-icon">❌</div>
         <h2>O Problema</h2>
       </div>
-      <p>Empresas de médio porte enfrentam desafios críticos na aquisição via WhatsApp:</p>
+      <p>Empresas de médio porte enfrentavam:</p>
       <ul>
-        <li><strong>Conformidade LGPD:</strong> Dificuldade em capturar consentimento explícito</li>
-        <li><strong>Velocidade de resposta:</strong> Leads aguardam dias para primeiro contato</li>
-        <li><strong>Triagem manual:</strong> Time comercial perde tempo com leads desqualificados</li>
-        <li><strong>Escalabilidade limitada:</strong> Programas de indicação (MGM) não escalam</li>
+        <li><strong>Conformidade LGPD frágil:</strong> Consentimento implícito gerava risco legal</li>
+        <li><strong>Velocidade insuficiente:</strong> Tempo médio de resposta de <strong>5 minutos</strong></li>
+        <li><strong>Triagem ineficiente:</strong> 60% dos leads enviados ao comercial eram desqualificados</li>
+        <li><strong>MGM inativo:</strong> Programa de indicação existia, mas não convertia</li>
       </ul>
     </div>
 
@@ -214,13 +252,13 @@
         <div class="card-icon">✅</div>
         <h2>A Solução</h2>
       </div>
-      <p>Sistema de automação conversacional que integra captura, qualificação e distribuição de leads em tempo real via WhatsApp, mantendo conformidade total com LGPD.</p>
+      <p>Sistema de automação conversacional com IA embarcada, integrando captura, qualificação e roteamento em tempo real — 100% LGPD-compliant.</p>
       
       <div class="tech-stack">
         <span class="badge">n8n (Render.com)</span>
         <span class="badge">Meta Cloud API</span>
         <span class="badge">Groq + Llama 3</span>
-        <span class="badge">Airtable / Google Sheets</span>
+        <span class="badge">Airtable</span>
         <span class="badge">GA4 + Data Studio</span>
       </div>
     </div>
@@ -240,15 +278,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Taxa de Consentimento</td><td>—</td><td>94%</td><td>✅ LGPD sem fricção</td></tr>
-          <tr><td>CPA</td><td>Média mercado</td><td>–35%</td><td>💰 Redução significativa</td></tr>
-          <tr><td>Tempo de Resposta</td><td>3 dias</td><td>&lt;2 segundos</td><td>⚡ Automação total</td></tr>
-          <tr><td>Conversão Lead→Venda</td><td>Baseline</td><td>+38%</td><td>📈 Fechamento acelerado</td></tr>
+          <tr><td>Taxa de Conversão</td><td>48%</td><td>86%</td><td>✅ +38 p.p.</td></tr>
+          <tr><td>Tempo de Resposta</td><td>5 minutos</td><td>&lt;2 segundos</td><td>⚡ 150x mais rápido</td></tr>
+          <tr><td>CPA</td><td>R$120</td><td>R$78</td><td>💰 –35%</td></tr>
+          <tr><td>Ativações MGM</td><td>0%</td><td>23%</td><td>🔁 Programa escalável</td></tr>
         </tbody>
       </table>
 
       <div class="highlight">
-        <p><strong>Aprendizados Técnicos:</strong> Consentimento como feature aumentou opt-in para 94%. Llama 3 com poucos dados estruturados supera modelos maiores com dados desorganizados. Feedback loop CRM→IA é essencial para retreinamento contínuo.</p>
+        <p><strong>Aprendizados Técnicos:</strong> Consentimento explícito como primeiro passo aumentou opt-in para 94%. Llama 3 com contexto estruturado supera modelos maiores com dados desorganizados. Feedback loop CRM→IA é essencial para retreinamento contínuo.</p>
       </div>
     </div>
   </div>
@@ -262,12 +300,13 @@
         <div class="card-icon">📉</div>
         <h2>O Problema</h2>
       </div>
-      <p>Gestores de mídia paga em empresas multicanal enfrentam:</p>
+      <p>Gestores de mídia em empresas multicanal perdiam eficiência com:</p>
       <ul>
-        <li>Análise manual demorada (2+ horas/dia)</li>
-        <li>Decisões reativas, não preditivas</li>
-        <li>Dados fragmentados entre Google, Meta, Shopee, TikTok</li>
-        <li>Falta de visão geográfica (saturação por região)</li>
+        <li>2+ horas/dia consolidando dados manualmente</li>
+        <li>Decisões baseadas em intuição, não em dados preditivos</li>
+        <li>Silos entre Google Ads, Meta, Shopee, TikTok</li>
+        <li>Nenhuma visão geográfica de saturação de mercado</li>
+        <li>Oportunidades de otimização passavam despercebidas</li>
       </ul>
     </div>
 
@@ -276,7 +315,7 @@
         <div class="card-icon">🧠</div>
         <h2>A Solução</h2>
       </div>
-      <p>Plataforma SaaS que consolida dados multicanal, identifica padrões e sugere redistribuição de budget em tempo real com IA.</p>
+      <p>Plataforma SaaS que consolida dados multicanal, identifica padrões de performance e sugere redistribuição inteligente de budget com IA generativa.</p>
       
       <div class="tech-stack">
         <span class="badge">React + TypeScript</span>
@@ -284,24 +323,48 @@
         <span class="badge">Google Cloud Functions</span>
         <span class="badge">Gemini AI</span>
         <span class="badge">Firestore + BigQuery</span>
-        <span class="badge">Google Ads / Meta / TikTok APIs</span>
+        <span class="badge">Google/Meta/Shopee/TikTok APIs</span>
+      </div>
+
+      <h3 style="margin: 24px 0 16px; color: var(--blue-900);">Funcionalidades Core (V2.1)</h3>
+      <div class="feature-grid">
+        <div class="feature-card"><strong>📊 Consolidação Multicanal</strong> Coleta automática com retry inteligente</div>
+        <div class="feature-card"><strong>🗺️ Análise Geográfica</strong> Drill-down País → Estado → Cidade</div>
+        <div class="feature-card"><strong>🔔 Alertas Inteligentes</strong> Críticos, oportunidades e sistema</div>
+        <div class="feature-card"><strong>🤖 Otimizador com Gemini</strong> Recomendações baseadas em 90 dias de histórico</div>
+        <div class="feature-card"><strong>📤 Exportação Automática</strong> CSV, Sheets, PDF, webhooks</div>
+        <div class="feature-card"><strong>⌨️ Atalhos de Teclado</strong> Cmd+K, Ctrl+E, Ctrl+N para power users</div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header">
-        <div class="card-icon">📊</div>
-        <h2>Resultados</h2>
+        <div class="card-icon">🚀</div>
+        <h2>Resultados e Escalabilidade</h2>
       </div>
       <ul>
         <li><strong>ROAS médio:</strong> 3.2x (vs. mercado: 2.5x)</li>
         <li><strong>Tempo de análise:</strong> 2h/dia → 10 minutos</li>
         <li><strong>Implementação:</strong> 80% das agências veem valor na 1ª semana</li>
         <li><strong>Cobertura:</strong> 27 estados + LATAM (AR, CL, MX, CO)</li>
+        <li><strong>Investimento gerenciado:</strong> R$500k/mês por cliente</li>
       </ul>
 
-      <div class="highlight">
-        <p><strong>Caso Prático:</strong> Durante Black Friday, o sistema identificou que Meta Reels convertia 40% melhor que Google Shopping e sugeriu realocação de R$50k — maximizando ROI no período crítico.</p>
+      <h3 style="margin: 24px 0 16px; color: var(--blue-900);">Casos de Uso Reais</h3>
+      <ul>
+        <li><strong>Black Friday:</strong> Identificou Meta Reels convertendo 40% melhor que Google Shopping → sugeriu realocação de R$50k (+18% ROAS esperado)</li>
+        <li><strong>Lançamento de Produto:</strong> Testou em 5 canais simultaneamente → identificou TikTok como mais eficiente (CPA 28% menor)</li>
+        <li><strong>Saturação Regional:</strong> SP com CPA R$180 vs. MG com R$95 → sugeriu expansão para BH e redução de 20% em SP</li>
+      </ul>
+
+      <h3 style="margin: 24px 0 16px; color: var(--blue-900);">Roadmap Técnico</h3>
+      <div class="roadmap">
+        <div class="roadmap-item done">✅ MVP funcional (5 integrações)</div>
+        <div class="roadmap-item done">✅ Análise geográfica (3 níveis)</div>
+        <div class="roadmap-item next">🚀 Integração TikTok Ads completa</div>
+        <div class="roadmap-item next">🎨 Criador de Anúncios com IA</div>
+        <div class="roadmap-item future">📈 Simulador com ML preditivo</div>
+        <div class="roadmap-item future">🔌 API pública para white-label</div>
       </div>
     </div>
   </div>
