@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Marina Nagashima</title>
+    <title>Portfólio - Marina Nagashima | Marketing Performance & IA</title>
+    <meta name="description" content="Especialista em Mídia Paga, Performance Digital e Growth Marketing com foco em Automação e IA">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         
@@ -19,8 +20,10 @@
             line-height: 1.6;
         }
         
+        /* SISTEMA DE PÁGINAS RESPONSIVO */
         .page {
-            width: 210mm;
+            width: 100%;
+            max-width: 210mm;
             min-height: 297mm;
             margin: 20px auto;
             background: white;
@@ -31,7 +34,7 @@
         /* CAPA */
         .cover {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #667eea 100%);
-            height: 297mm;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,34 +45,35 @@
         }
         
         .cover-title {
-            font-size: 56px;
+            font-size: clamp(32px, 5vw, 56px);
             font-weight: 800;
             margin-bottom: 24px;
             line-height: 1.2;
         }
         
         .cover-subtitle {
-            font-size: 24px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-weight: 300;
             margin-bottom: 60px;
             opacity: 0.95;
         }
         
         .cover-author {
-            font-size: 32px;
+            font-size: clamp(24px, 3vw, 32px);
             font-weight: 700;
             margin-bottom: 12px;
         }
         
         .cover-role {
-            font-size: 18px;
+            font-size: clamp(14px, 1.8vw, 18px);
             font-weight: 400;
             opacity: 0.9;
             margin-bottom: 40px;
+            max-width: 600px;
         }
         
         .cover-contact {
-            font-size: 16px;
+            font-size: clamp(14px, 1.6vw, 16px);
             font-weight: 400;
             opacity: 0.85;
         }
@@ -87,7 +91,7 @@
         
         /* PÁGINAS INTERNAS */
         .content-page {
-            padding: 60px;
+            padding: clamp(40px, 6vw, 60px);
         }
         
         .page-header {
@@ -99,20 +103,20 @@
         .page-number {
             position: absolute;
             bottom: 30px;
-            right: 60px;
+            right: clamp(30px, 5vw, 60px);
             font-size: 14px;
             color: #94a3b8;
         }
         
         h1 {
-            font-size: 36px;
+            font-size: clamp(28px, 4vw, 36px);
             font-weight: 800;
             color: #1e3a8a;
             margin-bottom: 16px;
         }
         
         h2 {
-            font-size: 28px;
+            font-size: clamp(22px, 3vw, 28px);
             font-weight: 700;
             color: #1e3a8a;
             margin-bottom: 20px;
@@ -120,7 +124,7 @@
         }
         
         h3 {
-            font-size: 20px;
+            font-size: clamp(18px, 2.2vw, 20px);
             font-weight: 600;
             color: #3b82f6;
             margin-bottom: 16px;
@@ -128,14 +132,14 @@
         }
         
         p {
-            font-size: 16px;
+            font-size: clamp(14px, 1.6vw, 16px);
             color: #475569;
             margin-bottom: 16px;
             line-height: 1.8;
         }
         
         .intro-text {
-            font-size: 18px;
+            font-size: clamp(16px, 1.8vw, 18px);
             color: #334155;
             line-height: 1.8;
         }
@@ -156,9 +160,10 @@
             margin-bottom: 0;
         }
         
+        /* GRIDS RESPONSIVOS */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 24px 0;
         }
@@ -174,6 +179,7 @@
         .benefit-card:hover {
             border-color: #3b82f6;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
         }
         
         .benefit-icon {
@@ -196,14 +202,14 @@
         
         .metrics-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
             margin: 32px 0;
         }
         
         .metrics-row-4 {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 16px;
             margin: 32px 0;
         }
@@ -225,32 +231,32 @@
         }
         
         .metric-value {
-            font-size: 32px;
+            font-size: clamp(24px, 3vw, 32px);
             font-weight: 800;
             margin-bottom: 8px;
         }
         
         .metric-value-small {
-            font-size: 24px;
+            font-size: clamp(20px, 2.5vw, 24px);
             font-weight: 800;
             margin-bottom: 6px;
         }
         
         .metric-label {
-            font-size: 13px;
+            font-size: clamp(12px, 1.4vw, 13px);
             opacity: 0.9;
             line-height: 1.4;
         }
         
         .metric-label-small {
-            font-size: 11px;
+            font-size: clamp(11px, 1.2vw, 11px);
             opacity: 0.9;
             line-height: 1.3;
         }
         
         .problem-solution {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin: 24px 0;
         }
@@ -290,7 +296,7 @@
         }
         
         li {
-            font-size: 15px;
+            font-size: clamp(14px, 1.5vw, 15px);
             color: #475569;
             margin-bottom: 8px;
             line-height: 1.6;
@@ -299,28 +305,35 @@
         .flow-diagram {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             border-radius: 12px;
-            padding: 32px;
+            padding: 32px 20px;
             margin: 24px 0;
             text-align: center;
+            overflow-x: auto;
+        }
+        
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-width: fit-content;
         }
         
         .flow-step {
-            display: inline-block;
             background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
             color: white;
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 14px;
-            margin: 0 8px;
+            font-size: clamp(12px, 1.4vw, 14px);
+            white-space: nowrap;
         }
         
         .flow-arrow {
-            display: inline-block;
             color: #3b82f6;
             font-size: 24px;
             font-weight: 700;
-            margin: 0 4px;
         }
         
         .implementation-steps {
@@ -367,7 +380,7 @@
         
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
             margin-top: 20px;
         }
@@ -383,12 +396,17 @@
             margin-bottom: 4px;
         }
         
-        /* TABELA DE STACK TÉCNICO */
+        /* TABELAS RESPONSIVAS */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
         table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 14px;
+            font-size: clamp(13px, 1.4vw, 14px);
         }
         
         table th {
@@ -414,7 +432,7 @@
             padding: 20px;
             border-radius: 8px;
             font-family: 'Courier New', monospace;
-            font-size: 13px;
+            font-size: clamp(12px, 1.3vw, 13px);
             line-height: 1.6;
             margin: 20px 0;
             overflow-x: auto;
@@ -424,14 +442,109 @@
             color: #94a3b8;
         }
         
-        @media print {
+        /* MEDIA QUERIES ESPECÍFICAS */
+        @media screen and (max-width: 1024px) {
             .page {
-                margin: 0;
+                max-width: 95%;
+            }
+            
+            .metrics-row {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .page {
+                margin: 10px auto;
                 box-shadow: none;
             }
             
+            .content-page {
+                padding: 30px 20px;
+            }
+            
+            .cover {
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            
+            .metrics-row,
+            .metrics-row-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-step {
+                font-size: 12px;
+                padding: 10px 16px;
+            }
+            
+            .flow-arrow {
+                font-size: 20px;
+            }
+            
+            .implementation-steps li {
+                padding-left: 50px;
+            }
+            
+            .implementation-steps li::before {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .metrics-row,
+            .metrics-row-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .cover-title br {
+                display: none;
+            }
+            
+            .page-number {
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+        
+        /* OTIMIZAÇÃO PARA IMPRESSÃO */
+        @media print {
             body {
                 background: white;
+            }
+            
+            .page {
+                width: 210mm;
+                max-width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .cover {
+                height: 297mm;
+                min-height: 297mm;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            
+            .benefit-card,
+            .metric-box,
+            .highlight-box {
+                page-break-inside: avoid;
             }
         }
     </style>
@@ -539,53 +652,57 @@
         
         <h2>Stack Tecnológico Implementado</h2>
         
-        <table>
-            <tr>
-                <th>Componente</th>
-                <th>Tecnologia</th>
-                <th>Justificativa</th>
-            </tr>
-            <tr>
-                <td><strong>Orquestração</strong></td>
-                <td>n8n (Render.com)</td>
-                <td>Automação visual, self-hosted, custo zero de licença</td>
-            </tr>
-            <tr>
-                <td><strong>Canal</strong></td>
-                <td>Meta Cloud API</td>
-                <td>Até 1.000 usuários/mês gratuitos, integração oficial</td>
-            </tr>
-            <tr>
-                <td><strong>IA</strong></td>
-                <td>Groq (Llama 3)</td>
-                <td>Processamento ultra-rápido sem rate limits</td>
-            </tr>
-            <tr>
-                <td><strong>CRM</strong></td>
-                <td>Airtable/Google Sheets</td>
-                <td>Low-code, APIs robustas, familiar para equipes</td>
-            </tr>
-            <tr>
-                <td><strong>Analytics</strong></td>
-                <td>GA4 + Data Studio</td>
-                <td>Rastreamento funil completo, dashboards customizáveis</td>
-            </tr>
-        </table>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Componente</th>
+                    <th>Tecnologia</th>
+                    <th>Justificativa</th>
+                </tr>
+                <tr>
+                    <td><strong>Orquestração</strong></td>
+                    <td>n8n (Render.com)</td>
+                    <td>Automação visual, self-hosted, custo zero de licença</td>
+                </tr>
+                <tr>
+                    <td><strong>Canal</strong></td>
+                    <td>Meta Cloud API</td>
+                    <td>Até 1.000 usuários/mês gratuitos, integração oficial</td>
+                </tr>
+                <tr>
+                    <td><strong>IA</strong></td>
+                    <td>Groq (Llama 3)</td>
+                    <td>Processamento ultra-rápido sem rate limits</td>
+                </tr>
+                <tr>
+                    <td><strong>CRM</strong></td>
+                    <td>Airtable/Google Sheets</td>
+                    <td>Low-code, APIs robustas, familiar para equipes</td>
+                </tr>
+                <tr>
+                    <td><strong>Analytics</strong></td>
+                    <td>GA4 + Data Studio</td>
+                    <td>Rastreamento funil completo, dashboards customizáveis</td>
+                </tr>
+            </table>
+        </div>
         
         <h2>Arquitetura do Fluxo</h2>
         
         <div class="flow-diagram">
-            <div class="flow-step">WhatsApp Lead</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Consentimento LGPD</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">IA Groq/Llama 3</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Scoring ICP</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Roteamento</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Comercial/Nutrição</div>
+            <div class="flow-container">
+                <div class="flow-step">WhatsApp Lead</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Consentimento LGPD</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">IA Groq/Llama 3</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Scoring ICP</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Roteamento</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Comercial/Nutrição</div>
+            </div>
         </div>
         
         <h3>Lógica de Qualificação por Score</h3>
@@ -807,51 +924,55 @@
         
         <h2>Ganhos Operacionais Mensurados</h2>
         
-        <table>
-            <tr>
-                <th>Métrica</th>
-                <th>Antes</th>
-                <th>Depois</th>
-                <th>Impacto</th>
-            </tr>
-            <tr>
-                <td>Tempo de Análise</td>
-                <td>2 horas/dia</td>
-                <td><strong>10 minutos</strong></td>
-                <td>92% redução</td>
-            </tr>
-            <tr>
-                <td>Aumento de ROAS</td>
-                <td>Baseline</td>
-                <td><strong>+15-30%</strong></td>
-                <td>Após implementação de recomendações</td>
-            </tr>
-            <tr>
-                <td>Taxa de Adoção</td>
-                <td>-</td>
-                <td><strong>80%</strong></td>
-                <td>Agências veem valor na 1ª semana</td>
-            </tr>
-            <tr>
-                <td>Cobertura Geográfica</td>
-                <td>-</td>
-                <td><strong>27 estados + LATAM</strong></td>
-                <td>Brasil + ARG, CHI, MEX, COL</td>
-            </tr>
-        </table>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Antes</th>
+                    <th>Depois</th>
+                    <th>Impacto</th>
+                </tr>
+                <tr>
+                    <td>Tempo de Análise</td>
+                    <td>2 horas/dia</td>
+                    <td><strong>10 minutos</strong></td>
+                    <td>92% redução</td>
+                </tr>
+                <tr>
+                    <td>Aumento de ROAS</td>
+                    <td>Baseline</td>
+                    <td><strong>+15-30%</strong></td>
+                    <td>Após implementação de recomendações</td>
+                </tr>
+                <tr>
+                    <td>Taxa de Adoção</td>
+                    <td>-</td>
+                    <td><strong>80%</strong></td>
+                    <td>Agências veem valor na 1ª semana</td>
+                </tr>
+                <tr>
+                    <td>Cobertura Geográfica</td>
+                    <td>-</td>
+                    <td><strong>27 estados + LATAM</strong></td>
+                    <td>Brasil + ARG, CHI, MEX, COL</td>
+                </tr>
+            </table>
+        </div>
         
         <h2>Fluxo de Trabalho Assistido</h2>
         
         <div class="flow-diagram">
-            <div class="flow-step">Coleta Automática</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Análise Gemini AI</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Recomendação</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Validação Humana</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">Execução</div>
+            <div class="flow-container">
+                <div class="flow-step">Coleta Automática</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Análise Gemini AI</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Recomendação</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Validação Humana</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Execução</div>
+            </div>
         </div>
         
         <div class="highlight-box">
@@ -1037,13 +1158,13 @@
             </div>
         </div>
         
-        <div class="contact-info">
+         <div class="contact-info">
          <!-- CTA FINAL -->
     <div class="footer-cta">
       <p>Interessado em implementar essas soluções na sua empresa?<br>
       <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zVFYRVThdxFCebUNLz1pKPTr4gUUJs2CtaOWFSOoLhPLdK4JlbXayG0tRyGm8b-d0LtXeDRUQ?gv=true" target="_blank" rel="noopener">📅 Agende uma conversa estratégica</a></p>
     </div>
-  </div>    
+  </div>      
             <div class="contact-item">
                 <strong>LinkedIn</strong>
                 linkedin.com/in/marinanagashina
@@ -1062,7 +1183,7 @@
             </p>
         </div>
         
-        <div class="page-number">Página 8</div>
+        <div class="page-number"></div>
     </div>
 
 </body>
