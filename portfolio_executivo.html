@@ -1,398 +1,1069 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio técnico de Marina Nagashima: automação, IA e performance de marketing B2B com resultados mensuráveis." />
-  <title>Marina V. Nagashima — Strategic Generalist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.7;
-      font-size: 17px;
-    }
-    .page {
-      width: 210mm;
-      min-height: 297mm;
-      margin: 40px auto;
-      background: white;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      padding: 60px;
-      position: relative;
-    }
-    h1 {
-      font-size: 36px;
-      font-weight: 800;
-      color: #1e3a8a;
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-    h2 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1e3a8a;
-      margin: 40px 0 20px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e2e8f0;
-    }
-    h3 {
-      font-size: 22px;
-      font-weight: 600;
-      color: #3b82f6;
-      margin: 32px 0 16px;
-    }
-    p {
-      margin-bottom: 16px;
-      color: #334155;
-    }
-    ul, ol {
-      margin-left: 24px;
-      margin-bottom: 24px;
-    }
-    li {
-      margin-bottom: 8px;
-      color: #475569;
-    }
-    .cover {
-      text-align: center;
-      padding: 80px 60px;
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-      color: white;
-      margin: -60px -60px 40px;
-    }
-    .cover h1 {
-      font-size: 48px;
-      margin-bottom: 16px;
-      color: white;
-    }
-    .cover p.subtitle {
-      font-size: 24px;
-      font-weight: 300;
-      opacity: 0.95;
-      margin-bottom: 50px;
-    }
-    .author-name {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .author-role {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-    .contact-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border-bottom: 1px solid rgba(255,255,255,0.4);
-    }
-    .contact-links a:hover {
-      border-bottom-color: white;
-    }
-
-    .section {
-      margin-bottom: 48px;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .section-icon {
-      font-size: 24px;
-      color: #3b82f6;
-    }
-    .section-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #1e3a8a;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    th {
-      background: #f1f8ff;
-      font-weight: 600;
-      color: #1e3a8a;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 16px 0;
-    }
-    .badge {
-      background: #f1f8ff;
-      color: #1e3a8a;
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .highlight {
-      background: #f8fafc;
-      border-left: 3px solid #3b82f6;
-      padding: 20px;
-      margin: 24px 0;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin: 20px 0;
-    }
-    .feature-item {
-      padding: 16px;
-      background: #f8fafc;
-      border-radius: 8px;
-    }
-    .feature-item strong {
-      color: #1e3a8a;
-    }
-
-    .roadmap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .roadmap-item {
-      background: #f1f8ff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .footer-cta {
-      text-align: center;
-      padding-top: 40px;
-      margin-top: 40px;
-      border-top: 1px solid #e2e8f0;
-      font-size: 18px;
-    }
-    .footer-cta a {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .footer-cta a:hover {
-      text-decoration: underline;
-    }
-
-    @media print {
-      .page { margin: 0; box-shadow: none; }
-      body { background: white; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Marina Nagashima</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        /* CAPA */
+        .cover {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #667eea 100%);
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .cover-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            opacity: 0.95;
+        }
+        
+        .cover-author {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .cover-role {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .cover-contact {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+        
+        .cover-contact a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            transition: border-color 0.3s;
+        }
+        
+        .cover-contact a:hover {
+            border-bottom-color: white;
+        }
+        
+        /* PÁGINAS INTERNAS */
+        .content-page {
+            padding: 60px;
+        }
+        
+        .page-header {
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            color: #334155;
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #3b82f6;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .benefit-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+        
+        .benefit-desc {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 32px 0;
+        }
+        
+        .metrics-row-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 32px 0;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .metric-box-small {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .metric-value-small {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .metric-label-small {
+            font-size: 11px;
+            opacity: 0.9;
+            line-height: 1.3;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 24px 0;
+        }
+        
+        .problem-box, .solution-box {
+            padding: 24px;
+            border-radius: 12px;
+        }
+        
+        .problem-box {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid #10b981;
+        }
+        
+        .box-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .problem-box .box-title {
+            color: #dc2626;
+        }
+        
+        .solution-box .box-title {
+            color: #059669;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        
+        li {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .flow-diagram {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .flow-step {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0 8px;
+        }
+        
+        .flow-arrow {
+            display: inline-block;
+            color: #3b82f6;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 4px;
+        }
+        
+        .implementation-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .implementation-steps li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 24px;
+        }
+        
+        .implementation-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .author-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+        
+        .author-section h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            font-size: 15px;
+            color: #475569;
+        }
+        
+        .contact-item strong {
+            color: #1e3a8a;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        /* TABELA DE STACK TÉCNICO */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        table th {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block .comment {
+            color: #94a3b8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div style="
-  background: #f1f8ff;
-  padding: 12px 24px;
-  border-bottom: 1px solid #dbeafe;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-">
-  <a href="https://marina-nagashima-portifolio.netlify.app/" 
-     style="color: #1e3a8a; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;"
-     aria-label="Voltar para o portfólio principal">
-    ← Voltar para o Portfólio
-  </a>
-</div>
-
-  <div class="page">
-    <!-- CAPA -->
-    <div class="cover">
-      <h1>Automação e IA para Performance de Marketing</h1>
-      <p class="subtitle">Como tecnologia e dados aceleram resultados em ambientes B2B</p>
-      <div class="author-name">Marina V. Nagashima</div>
-      <div class="author-role">Strategic Generalist | Growth & Tech</div>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/marinanagashima" target="_blank" rel="noopener">🔗 LinkedIn</a>
-        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zVFYRVThdxFCebUNLz1pKPTr4gUUJs2CtaOWFSOoLhPLdK4JlbXayG0tRyGm8b-d0LtXeDRUQ?gv=true" target="_blank" rel="noopener">📅 Agende uma conversa</a>
-      </div>
+    <!-- PÁGINA 1: CAPA -->
+    <div class="page cover">
+        <div class="cover-title">Automação e IA<br>para Performance de Marketing</div>
+        <div class="cover-subtitle">Como tecnologia e dados aceleram resultados em ambientes B2B</div>
+        <div style="margin-top: 80px;">
+            <div class="cover-author">Marina V. Nagashima</div>
+            <div class="cover-role">Especialista em Mídia Paga, Performance Digital & Growth Marketing<br>com foco em Automação e Inteligência Artificial</div>
+            <div class="cover-contact">
+                <a href="mailto:marina_vborges@hotmail.com">marina_vborges@hotmail.com</a><br>
+                (13) 98152-5521<br>
+                <a href="https://linkedin.com/in/marinanagashina/" target="_blank">linkedin.com/in/marinanagashina</a>
+            </div>
+        </div>
     </div>
 
-    <!-- PROJETO 1 -->
-    <div class="section">
-      <h2>Projeto 1: Sistema de Qualificação de Leads com IA via WhatsApp</h2>
+    <!-- PÁGINA 2: VISÃO GERAL -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Visão Geral</h1>
+            <p class="intro-text">Como IA e Automação aumentam eficiência e reduzem CAC em Marketing B2B</p>
+        </div>
+        
+        <p class="intro-text">Em ambientes de alta competitividade e orçamentos robustos, a diferença entre crescimento sustentável e desperdício de recursos está na capacidade de tomar decisões rápidas e orientadas por dados.</p>
+        
+        <p class="intro-text">Este documento apresenta dois projetos aplicados que demonstram como automação e inteligência artificial podem ser implementadas para resolver problemas críticos de performance em marketing digital.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Contexto de Aplicação:</strong></p>
+            <p>Os projetos descritos foram desenvolvidos e aplicados em contexto real, com stack tecnológico completo e métricas validadas. Dados específicos de marcas foram anonimizados por confidencialidade, mas arquitetura, fluxos de trabalho e impactos são 100% reais e replicáveis.</p>
+        </div>
+        
+        <h2>Oportunidades Identificadas</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">Redução de Custo Operacional</div>
+                <div class="benefit-desc">Automação de processos manuais que consomem tempo e recursos humanos qualificados</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-title">Aumento de Eficiência de Mídia</div>
+                <div class="benefit-desc">Otimização contínua de investimento baseada em performance real de cada canal</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✨</div>
+                <div class="benefit-title">Melhor Qualificação de Leads</div>
+                <div class="benefit-desc">Redução de leads desqualificados chegando ao time comercial</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">Decisões Orientadas por Dados</div>
+                <div class="benefit-desc">Substituição de decisões intuitivas por análises preditivas e cenários simulados</div>
+            </div>
+        </div>
+        
+        <h2>Projetos Apresentados</h2>
+        
+        <p><strong>Projeto 1: Sistema de Qualificação de Leads com IA via WhatsApp</strong><br>
+        Automação conversacional que captura, qualifica e distribui leads em tempo real mantendo conformidade LGPD. Stack: n8n, Meta Cloud API, Groq (Llama 3), Airtable, GA4.</p>
+        
+        <p><strong>Projeto 2: BudgetMind - Plataforma SaaS de Otimização de Budget</strong><br>
+        Sistema inteligente que consolida dados multicanal e sugere redistribuição otimizada de investimento. Stack: React + TypeScript, Google Cloud, Gemini AI, APIs de mídia paga.</p>
+        
+        <div class="page-number">Página 2</div>
+    </div>
 
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">❌</span>
-          <div class="section-title">O Problema</div>
+    <!-- PÁGINA 3: PROJETO 1 - PROBLEMA E SOLUÇÃO -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Projeto 1: Automação de Qualificação de Leads com IA</h1>
         </div>
-        <p>Empresas de médio porte enfrentavam desafios críticos na aquisição via WhatsApp:</p>
-        <ul>
-          <li><strong>Conformidade LGPD frágil:</strong> Consentimento implícito gerava risco legal</li>
-          <li><strong>Velocidade insuficiente:</strong> Tempo médio de resposta de <strong>5 minutos</strong></li>
-          <li><strong>Triagem ineficiente:</strong> 60% dos leads enviados ao comercial eram desqualificados</li>
-          <li><strong>MGM inativo:</strong> Programa de indicação existia, mas não convertia</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">✅</span>
-          <div class="section-title">A Solução</div>
+        
+        <div class="problem-solution">
+            <div class="problem-box">
+                <div class="box-title">❌ Problema Identificado</div>
+                <ul>
+                    <li>Conformidade LGPD complexa sem violar regulamentação</li>
+                    <li>Leads aguardam até 3 dias para primeiro contato</li>
+                    <li>Time comercial desperdiça tempo com leads desqualificados</li>
+                    <li>Impossibilidade de testar mensagens em tempo real</li>
+                    <li>Programas de indicação (MGM) não escalam sem automação</li>
+                </ul>
+            </div>
+            
+            <div class="solution-box">
+                <div class="box-title">✅ Solução Implementada</div>
+                <ul>
+                    <li>Captura com consentimento LGPD explícito automatizado</li>
+                    <li>Qualificação IA em <2 segundos via Llama 3</li>
+                    <li>Roteamento inteligente por score de intenção</li>
+                    <li>Testes A/B automáticos de mensagens</li>
+                    <li>Sistema escalável até 50k interações/mês sem custo adicional</li>
+                </ul>
+            </div>
         </div>
-        <p>Sistema de automação conversacional com IA embarcada, integrando captura, qualificação e roteamento em tempo real — 100% LGPD-compliant.</p>
-        <div class="tech-stack">
-          <span class="badge">n8n (Render.com)</span>
-          <span class="badge">Meta Cloud API</span>
-          <span class="badge">Groq + Llama 3</span>
-          <span class="badge">Airtable</span>
-          <span class="badge">GA4 + Data Studio</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">📈</span>
-          <div class="section-title">Resultados Mensurados</div>
-        </div>
+        
+        <h2>Stack Tecnológico Implementado</h2>
+        
         <table>
-          <thead>
             <tr>
-              <th>Métrica</th>
-              <th>Antes</th>
-              <th>Depois</th>
-              <th>Impacto</th>
+                <th>Componente</th>
+                <th>Tecnologia</th>
+                <th>Justificativa</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr><td>Taxa de Conversão</td><td>48%</td><td>86%</td><td>+38 p.p.</td></tr>
-            <tr><td>Tempo de Resposta</td><td>5 minutos</td><td>&lt;2 segundos</td><td>150x mais rápido</td></tr>
-            <tr><td>CPA</td><td>R$120</td><td>R$78</td><td>–35%</td></tr>
-            <tr><td>Ativações MGM</td><td>0%</td><td>23%</td><td>Programa escalável</td></tr>
-          </tbody>
+            <tr>
+                <td><strong>Orquestração</strong></td>
+                <td>n8n (Render.com)</td>
+                <td>Automação visual, self-hosted, custo zero de licença</td>
+            </tr>
+            <tr>
+                <td><strong>Canal</strong></td>
+                <td>Meta Cloud API</td>
+                <td>Até 1.000 usuários/mês gratuitos, integração oficial</td>
+            </tr>
+            <tr>
+                <td><strong>IA</strong></td>
+                <td>Groq (Llama 3)</td>
+                <td>Processamento ultra-rápido sem rate limits</td>
+            </tr>
+            <tr>
+                <td><strong>CRM</strong></td>
+                <td>Airtable/Google Sheets</td>
+                <td>Low-code, APIs robustas, familiar para equipes</td>
+            </tr>
+            <tr>
+                <td><strong>Analytics</strong></td>
+                <td>GA4 + Data Studio</td>
+                <td>Rastreamento funil completo, dashboards customizáveis</td>
+            </tr>
         </table>
-
-        <div class="highlight">
-          <p><strong>Aprendizados Técnicos:</strong> Consentimento explícito como primeiro passo aumentou opt-in para 94%. Llama 3 com contexto estruturado supera modelos maiores com dados desorganizados. Feedback loop CRM→IA é essencial para retreinamento contínuo.</p>
+        
+        <h2>Arquitetura do Fluxo</h2>
+        
+        <div class="flow-diagram">
+            <div class="flow-step">WhatsApp Lead</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Consentimento LGPD</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">IA Groq/Llama 3</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Scoring ICP</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Roteamento</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Comercial/Nutrição</div>
         </div>
-      </div>
+        
+        <h3>Lógica de Qualificação por Score</h3>
+        <ul>
+            <li><strong>Score 80-100 (Intenção Alta):</strong> Urgência explícita + fit com ICP → Notificação imediata ao comercial</li>
+            <li><strong>Score 50-79 (Intenção Média):</strong> Interesse confirmado sem urgência → Fluxo de nutrição automatizado</li>
+            <li><strong>Score &lt;50 (Intenção Baixa):</strong> Perfil desqualificado → Audiência de retargeting baixa prioridade</li>
+        </ul>
+        
+        <div class="page-number">Página 3</div>
     </div>
 
-    <!-- PROJETO 2 -->
-    <div class="section">
-      <h2>Projeto 2: BudgetMind – Sistema Inteligente de Otimização de Budget</h2>
-
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">📉</span>
-          <div class="section-title">O Problema</div>
+    <!-- PÁGINA 4: PROJETO 1 - RESULTADOS E IMPACTO -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Projeto 1: Resultados Mensurados e Impacto</h1>
         </div>
-        <p>Gestores de mídia em empresas multicanal perdiam eficiência com:</p>
-        <ul>
-          <li>2+ horas/dia consolidando dados manualmente</li>
-          <li>Decisões baseadas em intuição, não em dados preditivos</li>
-          <li>Silos entre Google Ads, Meta, Shopee, TikTok</li>
-          <li>Nenhuma visão geográfica de saturação de mercado</li>
-          <li>Oportunidades de otimização passavam despercebidas</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">🧠</span>
-          <div class="section-title">A Solução</div>
+        
+        <h2>Métricas de Performance</h2>
+        
+        <div class="metrics-row-4">
+            <div class="metric-box-small">
+                <div class="metric-value-small">94%</div>
+                <div class="metric-label-small">Taxa de Consentimento LGPD</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">-35%</div>
+                <div class="metric-label-small">Redução de CPA vs. mercado</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">23%</div>
+                <div class="metric-label-small">Ativações MGM (indicação)</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">&lt;2s</div>
+                <div class="metric-label-small">Tempo de Resposta</div>
+            </div>
         </div>
-        <p>Plataforma SaaS que consolida dados multicanal, identifica padrões de performance e sugere redistribuição inteligente de budget com IA generativa.</p>
-        <div class="tech-stack">
-          <span class="badge">React + TypeScript</span>
-          <span class="badge">Tailwind CSS</span>
-          <span class="badge">Google Cloud Functions</span>
-          <span class="badge">Gemini AI</span>
-          <span class="badge">Firestore + BigQuery</span>
-          <span class="badge">Google/Meta/Shopee/TikTok APIs</span>
+        
+        <div class="metrics-row">
+            <div class="metric-box">
+                <div class="metric-value">+38%</div>
+                <div class="metric-label">Aumento em vendas fechadas (conversão lead→venda)</div>
+            </div>
+            
+            <div class="metric-box">
+                <div class="metric-value">3 dias → minutos</div>
+                <div class="metric-label">Redução no tempo de primeiro contato</div>
+            </div>
+            
+            <div class="metric-box">
+                <div class="metric-value">50k/mês</div>
+                <div class="metric-label">Capacidade sem custos adicionais</div>
+            </div>
         </div>
-
-        <h3>Funcionalidades Core (V2.1)</h3>
-        <div class="feature-list">
-          <div class="feature-item"><strong>📊 Consolidação Multicanal</strong><br>Coleta automática com retry inteligente</div>
-          <div class="feature-item"><strong>🗺️ Análise Geográfica</strong><br>Drill-down País → Estado → Cidade</div>
-          <div class="feature-item"><strong>🔔 Alertas Inteligentes</strong><br>Críticos, oportunidades e sistema</div>
-          <div class="feature-item"><strong>🤖 Otimizador com Gemini</strong><br>Recomendações baseadas em 90 dias de histórico</div>
-          <div class="feature-item"><strong>📤 Exportação Automática</strong><br>CSV, Sheets, PDF, webhooks</div>
-          <div class="feature-item"><strong>⌨️ Atalhos de Teclado</strong><br>Cmd+K, Ctrl+E, Ctrl+N para power users</div>
+        
+        <h2>Impacto de Negócio</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-title">Velocidade Elimina Gargalo</div>
+                <div class="benefit-desc">Resposta em <2 segundos vs. 3 dias anteriormente aumenta conversão drasticamente</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-title">Eficiência do Time Comercial</div>
+                <div class="benefit-desc">Vendedores focam apenas em leads qualificados com score alto (80+)</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">ROI Comprovado</div>
+                <div class="benefit-desc">CPA 35% menor que média de mercado mantendo qualidade de conversão</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <div class="benefit-title">Escalabilidade Nativa</div>
+                <div class="benefit-desc">Infraestrutura suporta 50k leads/mês sem custo adicional</div>
+            </div>
         </div>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <span class="section-icon">🚀</span>
-          <div class="section-title">Resultados e Escalabilidade</div>
+        
+        <h2>Aprendizados Técnicos</h2>
+        
+        <div class="highlight-box">
+            <p><strong>1. Rate Limits da Meta Cloud API são Críticos</strong></p>
+            <p>Contas novas têm limites rígidos. Warm-up gradual de volume (100→500→1000 mensagens/dia) evita bloqueios.</p>
         </div>
-        <ul>
-          <li><strong>ROAS médio:</strong> 3.2x (vs. mercado: 2.5x)</li>
-          <li><strong>Tempo de análise:</strong> 2h/dia → 10 minutos</li>
-          <li><strong>Implementação:</strong> 80% das agências veem valor na 1ª semana</li>
-          <li><strong>Cobertura:</strong> 27 estados + LATAM (AR, CL, MX, CO)</li>
-          <li><strong>Investimento gerenciado:</strong> R$500k/mês por cliente</li>
-        </ul>
-
-        <h3>Casos de Uso Reais</h3>
-        <ul>
-          <li><strong>Black Friday:</strong> Identificou Meta Reels convertendo 40% melhor que Google Shopping → sugeriu realocação de R$50k (+18% ROAS esperado)</li>
-          <li><strong>Lançamento de Produto:</strong> Testou em 5 canais simultaneamente → identificou TikTok como mais eficiente (CPA 28% menor)</li>
-          <li><strong>Saturação Regional:</strong> SP com CPA R$180 vs. MG com R$95 → sugeriu expansão para BH e redução de 20% em SP</li>
-        </ul>
-
-        <h3>Roadmap Técnico</h3>
-        <div class="roadmap">
-          <span class="roadmap-item">✅ MVP funcional (5 integrações)</span>
-          <span class="roadmap-item">✅ Análise geográfica (3 níveis)</span>
-          <span class="roadmap-item">🚀 Integração TikTok Ads completa</span>
-          <span class="roadmap-item">🎨 Criador de Anúncios com IA</span>
-          <span class="roadmap-item">📈 Simulador com ML preditivo</span>
-          <span class="roadmap-item">🔌 API pública para white-label</span>
+        
+        <div class="highlight-box">
+            <p><strong>2. Contexto > Volume de Dados para IA</strong></p>
+            <p>Llama 3 com poucos dados estruturados (nome, empresa, mensagem inicial) supera modelos maiores com dados desorganizados.</p>
         </div>
-      </div>
+        
+        <div class="highlight-box">
+            <p><strong>3. Consentimento LGPD como Feature Competitiva</strong></p>
+            <p>Transformar obrigação legal em diferencial ("garantimos sua privacidade") aumentou opt-in para 94%.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>4. Feedback Loop é Essencial para Refinamento</strong></p>
+            <p>Integração CRM→IA com dados de conversão comercial permite retreinamento contínuo do modelo de scoring.</p>
+        </div>
+        
+        <div class="page-number">Página 4</div>
     </div>
 
-    <!-- CTA FINAL -->
+    <!-- PÁGINA 5: PROJETO 2 - PROBLEMA E SOLUÇÃO -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Projeto 2: BudgetMind - Plataforma SaaS de Otimização</h1>
+        </div>
+        
+        <div class="problem-solution">
+            <div class="problem-box">
+                <div class="box-title">❌ Problema Identificado</div>
+                <ul>
+                    <li>Análise manual demorada: 2+ horas/dia consolidando plataformas</li>
+                    <li>Decisões reativas baseadas em intuição vs. dados preditivos</li>
+                    <li>Silos de dados entre Google Ads, Meta, Shopee, TikTok</li>
+                    <li>Impossibilidade de identificar saturação geográfica</li>
+                    <li>Oportunidades de otimização passam despercebidas</li>
+                </ul>
+            </div>
+            
+            <div class="solution-box">
+                <div class="box-title">✅ Solução Implementada</div>
+                <ul>
+                    <li>Consolidação automática de 5+ plataformas via APIs oficiais</li>
+                    <li>IA Gemini sugere redistribuição otimizada de budget</li>
+                    <li>Análise geográfica País→Estado→Cidade com heatmaps</li>
+                    <li>Central de alertas inteligentes (críticos/oportunidades/sistema)</li>
+                    <li>Simulador de cenários para testar mudanças antes de implementar</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Stack Tecnológico (V2.1)</h2>
+        
+        <div class="code-block">
+<span class="comment">FRONTEND:</span>
+├─ React + TypeScript (type-safety, componentização)
+├─ Tailwind CSS (design system escalável)
+└─ SVG/Canvas (mapas interativos, visualizações)
+
+<span class="comment">BACKEND:</span>
+├─ Google Cloud Functions (serverless, auto-scaling)
+├─ Gemini AI (recomendações inteligentes)
+├─ Firestore/BigQuery (dados estruturados + analytics)
+
+<span class="comment">INTEGRAÇÕES:</span>
+├─ Google Ads API
+├─ Meta Ads API (Facebook, Instagram)
+├─ Shopee Ads API
+├─ TikTok Ads API (em implementação)
+└─ Google Analytics 4
+        </div>
+        
+        <h2>Funcionalidades Core</h2>
+        
+        <h3>1. Consolidação Multicanal</h3>
+        <ul>
+            <li>Coleta automática de métricas de 5+ plataformas via APIs oficiais</li>
+            <li>Normalização de dados (ROAS, CPA, CAC, LTV, conversões) em formato único</li>
+            <li>Retry automático (3 tentativas + exponential backoff) para confiabilidade</li>
+        </ul>
+        
+        <h3>2. Análise de Saturação Geográfica</h3>
+        <ul>
+            <li>Visão hierárquica País → Estado → Cidade com drill-down interativo</li>
+            <li>Heatmaps identificam regiões com baixa penetração vs. saturadas</li>
+            <li>Sugestões automáticas de expansão ou rebalanceamento regional</li>
+        </ul>
+        
+        <h3>3. Central de Alertas Inteligentes</h3>
+        <ul>
+            <li><strong>Críticos (vermelho):</strong> CPA >30% acima da meta, ROAS &lt;2.0, estoque baixo</li>
+            <li><strong>Oportunidades (verde):</strong> Canal com performance acima da média, chance de scale</li>
+            <li><strong>Sistema (azul):</strong> Integrações offline, atualizações de API</li>
+        </ul>
+        
+        <div class="page-number">Página 5</div>
+    </div>
+
+    <!-- PÁGINA 6: PROJETO 2 - RESULTADOS E ARQUITETURA -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Projeto 2: Resultados e Arquitetura Técnica</h1>
+        </div>
+        
+        <h2>Performance Atual dos Clientes</h2>
+        
+        <div class="metrics-row-4">
+            <div class="metric-box-small">
+                <div class="metric-value-small">R$500k</div>
+                <div class="metric-label-small">Investimento Total/mês</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">3.2x</div>
+                <div class="metric-label-small">ROAS Médio (vs. 2.5x mercado)</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">11.245</div>
+                <div class="metric-label-small">Conversões/mês (GA4)</div>
+            </div>
+            
+            <div class="metric-box-small">
+                <div class="metric-value-small">2</div>
+                <div class="metric-label-small">Alertas Críticos Ativos</div>
+            </div>
+        </div>
+        
+        <h2>Ganhos Operacionais Mensurados</h2>
+        
+        <table>
+            <tr>
+                <th>Métrica</th>
+                <th>Antes</th>
+                <th>Depois</th>
+                <th>Impacto</th>
+            </tr>
+            <tr>
+                <td>Tempo de Análise</td>
+                <td>2 horas/dia</td>
+                <td><strong>10 minutos</strong></td>
+                <td>92% redução</td>
+            </tr>
+            <tr>
+                <td>Aumento de ROAS</td>
+                <td>Baseline</td>
+                <td><strong>+15-30%</strong></td>
+                <td>Após implementação de recomendações</td>
+            </tr>
+            <tr>
+                <td>Taxa de Adoção</td>
+                <td>-</td>
+                <td><strong>80%</strong></td>
+                <td>Agências veem valor na 1ª semana</td>
+            </tr>
+            <tr>
+                <td>Cobertura Geográfica</td>
+                <td>-</td>
+                <td><strong>27 estados + LATAM</strong></td>
+                <td>Brasil + ARG, CHI, MEX, COL</td>
+            </tr>
+        </table>
+        
+        <h2>Fluxo de Trabalho Assistido</h2>
+        
+        <div class="flow-diagram">
+            <div class="flow-step">Coleta Automática</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Análise Gemini AI</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Recomendação</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Validação Humana</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Execução</div>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Sistema Assistido, Não Automático</strong></p>
+            <p>A IA analisa dados e sugere otimizações (ex: "Mova R$15k de Google Search para Meta Reels, +18% ROAS esperado"), mas decisão final sempre passa por validação humana para considerar fatores estratégicos e contextuais.</p>
+        </div>
+        
+        <h2>Casos de Uso Práticos</h2>
+        
+        <h3>Black Friday</h3>
+        <p>Sistema identifica em tempo real que Meta Reels converte 40% melhor que Google Shopping durante o evento, sugere realocação de R$50k para maximizar ROI no período crítico de 72 horas.</p>
+        
+        <h3>Lançamento de Produto</h3>
+        <p>Durante fase inicial, BudgetMind testa produto em 5 canais simultaneamente, identifica TikTok como canal mais eficiente (CPA 28% menor), recomenda concentrar 60% do budget inicial lá.</p>
+        
+        <h3>Saturação Regional</h3>
+        <p>Análise geográfica mostra São Paulo saturado (CPA R$180) enquanto Minas Gerais tem performance superior (CPA R$95). Sistema sugere expansão para BH e redução de 20% em SP.</p>
+        
+        <div class="page-number">Página 6</div>
+    </div>
+
+    <!-- PÁGINA 7: ARQUITETURA TÉCNICA E ROADMAP -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Projeto 2: Detalhes Técnicos e Escalabilidade</h1>
+        </div>
+        
+        <h2>Arquitetura Técnica Destacável</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🔄</div>
+                <div class="benefit-title">Context API Global</div>
+                <div class="benefit-desc">Gerenciamento de notificações e estado compartilhado sem prop drilling para performance otimizada</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-title">Loading States Inteligentes</div>
+                <div class="benefit-desc">Skeleton screens mantêm UX fluida durante fetch de dados das APIs</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <div class="benefit-title">Error Handling Específico</div>
+                <div class="benefit-desc">Mensagens customizadas por tipo de falha (API timeout, rate limit, dados inválidos)</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">⌨️</div>
+                <div class="benefit-title">Atalhos de Teclado</div>
+                <div class="benefit-desc">Cmd/Ctrl+K (busca), Ctrl+E (exportar), Ctrl+N (novo alerta) para power users</div>
+            </div>
+        </div>
+        
+        <h2>Escalabilidade e Roadmap</h2>
+        
+        <h3>Atual (V2.1) ✅</h3>
+        <ul>
+            <li>MVP funcional com 5 integrações ativas (Google, Meta, Shopee, GA4, em breve TikTok)</li>
+            <li>Análise regional com 3 níveis de zoom (País→Estado→Cidade)</li>
+            <li>IA com recomendações baseadas em Gemini + dados históricos 90 dias</li>
+            <li>Exportação agendada (CSV, Excel, PDF, Google Sheets)</li>
+        </ul>
+        
+        <h3>Próximos 30 dias 🚀</h3>
+        <ul>
+            <li>Integração TikTok Ads completa com suporte a todos os tipos de campanha</li>
+            <li>Criador de Anúncios aprimorado com templates gerados por IA</li>
+            <li>PWA (Progressive Web App) para alertas e notificações mobile</li>
+        </ul>
+        
+        <h3>3-6 meses 📈</h3>
+        <ul>
+            <li>Simulador de cenários com ML preditivo para forecast de resultados</li>
+            <li>CRM de Leads integrado para rastreamento completo do funil</li>
+            <li>Expansão América Latina com localização completa (idioma, moeda, fusos)</li>
+            <li>API pública para uso white-label por agências e parceiros</li>
+        </ul>
+        
+        <h2>Modelo de Negócio</h2>
+        
+        <div class="highlight-box">
+            <p><strong>Público-Alvo Validado:</strong></p>
+            <p>Agências de publicidade (15k+ no Brasil) + in-house teams de e-commerce/varejo (50k+ marcas digitais)</p>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Diferenciação Competitiva:</strong></p>
+            <p>Única plataforma que combina IA + consolidação multicanal + análise geográfica granular em tempo real</p>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Modelo de Receita:</strong></p>
+            <p>SaaS por assinatura (Basic/Pro/Enterprise) com upsells em features premium (Simulador, CRM, API white-label, relatórios customizados)</p>
+        </div>
+        
+        <h2>Por Que Essas Soluções Funcionam</h2>
+        
+        <p>Ambos os projetos seguem princípios validados de engenharia de software e produto:</p>
+        
+        <ul>
+            <li><strong>Começam com Dor Clara:</strong> Problemas custam dinheiro/tempo mensuráveis</li>
+            <li><strong>MVP Funcional Rápido:</strong> 30-60 dias para primeira versão gerando valor</li>
+            <li><strong>Dados > Intuição:</strong> Decisões apoiadas por métricas objetivas</li>
+            <li><strong>Escalabilidade por Design:</strong> Infraestrutura cloud-native preparada para crescimento</li>
+            <li><strong>Feedback Loop Contínuo:</strong> Sistemas melhoram com uso via IA e dados de clientes</li>
+        </ul>
+        
+        <div class="page-number">Página 7</div>
+    </div>
+
+    <!-- PÁGINA 8: SOBRE A AUTORA -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h1>Sobre a Autora</h1>
+        </div>
+        
+        <div class="author-section">
+            <h3>Marina V. Nagashima</h3>
+            <p>Especialista Sênior em Mídia Paga, Performance Digital e Growth Marketing com mais de 10 anos de experiência liderando estratégias omnichannel para aquisição, retenção e expansão de receita em ambientes de alta competitividade.</p>
+            
+            <p>Expertise comprovada em automação de marketing, inteligência artificial aplicada e engenharia de dados, com foco em construir sistemas escaláveis que reduzem CAC e aumentam ROI de forma sustentável.</p>
+            
+            <p>Perfil orientado a resultados, com mentalidade de crescimento sustentável, foco em eficiência de investimento e habilidade em formar parcerias estratégicas entre Marketing, Tecnologia e Produto.</p>
+        </div>
+        
+        <h2>Experiência Relevante</h2>
+        
+        <h3>Kiss New York (Multinacional Beauty E-commerce)</h3>
+        <p><strong>Especialista em Mídia Paga & Performance</strong> | Abril 2022 - Presente</p>
+        <ul>
+            <li>Gestão de budget superior a R$500K/mês com ROAS médio de 4.5x</li>
+            <li>Integração de CRM e automação de jornada, elevando LTV em 25%</li>
+            <li>Construção de dashboards executivos e redução de CAC em 30%</li>
+            <li>Liderança de campanhas sazonais (Black Friday, Natal) com aumento de 30% em receita</li>
+        </ul>
+        
+        <h3>Projetos Paralelos (Portfólio Técnico)</h3>
+        <ul>
+            <li><strong>BudgetMind (SaaS):</strong> Plataforma de otimização de budget com IA - React + TypeScript + Gemini AI</li>
+            <li><strong>Sistema de Leads com IA:</strong> Automação conversacional WhatsApp - n8n + Groq/Llama 3 + Meta Cloud API</li>
+            <li><strong>AI-First Growth Engine:</strong> Framework open-source para automação de marketing com conformidade LGPD</li>
+        </ul>
+        
+        <h2>Formação e Certificações</h2>
+        <ul>
+            <li>MBA em Big Data Analytics - UniBF (em andamento)</li>
+            <li>Pós-graduação em Marketing - UniBF (em andamento)</li>
+            <li>Bacharelado em Desenvolvimento de Sistemas</li>
+            <li>Data Engineer de IA Python - DataCamp</li>
+            <li>Google Ads Certification (Search, Display, Shopping, Performance Max)</li>
+            <li>Meta Blueprint Certification (Media Buying Professional)</li>
+            <li>Google Analytics 4 e Data-Driven Marketing</li>
+            <li>Salesforce Administrator & Developer (em progresso)</li>
+        </ul>
+        
+        <h2>Stack Técnico</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💻</div>
+                <div class="benefit-title">Linguagens</div>
+                <div class="benefit-desc">Python, SQL, TypeScript/JavaScript, DBT</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">☁️</div>
+                <div class="benefit-title">Cloud & Infraestrutura</div>
+                <div class="benefit-desc">Google Cloud (BigQuery, Cloud Functions), AWS, Render.com</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🤖</div>
+                <div class="benefit-title">IA & Automação</div>
+                <div class="benefit-desc">Groq (Llama 3), Gemini AI, n8n, Make, Zapier</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">Analytics & BI</div>
+                <div class="benefit-desc">GA4, Google Data Studio, Looker, BigQuery, Airtable</div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+         <!-- CTA FINAL -->
     <div class="footer-cta">
       <p>Interessado em implementar essas soluções na sua empresa?<br>
       <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0zVFYRVThdxFCebUNLz1pKPTr4gUUJs2CtaOWFSOoLhPLdK4JlbXayG0tRyGm8b-d0LtXeDRUQ?gv=true" target="_blank" rel="noopener">📅 Agende uma conversa estratégica</a></p>
     </div>
-  </div>
+  </div>    
+            <div class="contact-item">
+                <strong>LinkedIn</strong>
+                linkedin.com/in/marinanagashina
+            </div>
+            
+            <div class="contact-item">
+                <strong>Localização</strong>
+                São Paulo, SP
+            </div>
+        </div>
+        
+        <div class="highlight-box" style="margin-top: 40px;">
+            <p style="text-align: center; font-size: 17px; margin-bottom: 0;">
+                <strong>Interessado em discutir como essas soluções podem ser aplicadas na sua organização?</strong><br>
+                Entre em contato para uma conversa estratégica sobre automação, IA e performance de marketing.
+            </p>
+        </div>
+        
+        <div class="page-number">Página 8</div>
+    </div>
 
 </body>
 </html>
