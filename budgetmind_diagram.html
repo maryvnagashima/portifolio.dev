@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetMind</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #718096;
+        }
+        
+        .architecture {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .layer {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 6px solid #3b82f6;
+        }
+        
+        .layer-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .layer-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .channel {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #3b82f6;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .metrics-analyzed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .metric-tag {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e3a8a;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .ai-capabilities {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 16px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .ai-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .capability {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .capability-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .capability-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .capability-desc {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .workflow {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .workflow-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        
+        .step-desc {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+        
+        .impact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .impact-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+            text-align: center;
+        }
+        
+        .impact-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .impact-label {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .impact-value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BudgetMind: Sistema Inteligente de Otimização de Budget</h1>
+            <p>Arquitetura de decisão orientada por dados para maximizar eficiência de investimento em mídia</p>
+        </div>
+        
+        <div class="architecture">
+            <div class="layer">
+                <div class="layer-title">
+                    <div class="layer-icon">📊</div>
+                    Camada 1: Consolidação de Dados Multicanal
+                </div>
+                <div class="channels">
+                    <div class="channel">Google Ads</div>
+                    <div class="channel">Meta Ads</div>
+                    <div class="channel">TikTok Ads</div>
+                    <div class="channel">LinkedIn Ads</div>
+                    <div class="channel">Amazon Ads</div>
+                    <div class="channel">Pinterest Ads</div>
+                </div>
+            </div>
+            
+            <div class="layer">
+                <div class="layer-title">
+                    <div class="layer-icon">🔍</div>
+                    Camada 2: Análise de Performance por Produto/Objetivo
+                </div>
+                <div class="metrics-analyzed">
+                    <div class="metric-tag">ROAS</div>
+                    <div class="metric-tag">CPA</div>
+                    <div class="metric-tag">CAC</div>
+                    <div class="metric-tag">LTV</div>
+                    <div class="metric-tag">CTR</div>
+                    <div class="metric-tag">Taxa Conversão</div>
+                    <div class="metric-tag">Ticket Médio</div>
+                    <div class="metric-tag">ROI</div>
+                </div>
+            </div>
+            
+            <div class="layer">
+                <div class="layer-title">
+                    <div class="layer-icon">🤖</div>
+                    Camada 3: Processamento e Recomendação Inteligente
+                </div>
+                <p style="color: #4b5563; font-size: 14px; line-height: 1.6; margin-top: 12px;">
+                    Sistema analisa histórico de performance, identifica padrões de eficiência e sugere redistribuição de investimento baseada em objetivos definidos (aquisição, retenção, expansão).
+                </p>
+            </div>
+        </div>
+        
+        <div class="ai-capabilities">
+            <div class="ai-title">🎯 Capacidades da IA no BudgetMind</div>
+            <div class="capabilities-grid">
+                <div class="capability">
+                    <div class="capability-icon">📈</div>
+                    <div class="capability-title">Análise Preditiva</div>
+                    <div class="capability-desc">Prevê performance futura baseada em dados históricos e sazonalidade</div>
+                </div>
+                
+                <div class="capability">
+                    <div class="capability-icon">💰</div>
+                    <div class="capability-title">Otimização de Budget</div>
+                    <div class="capability-desc">Sugere redistribuição entre canais para maximizar ROI</div>
+                </div>
+                
+                <div class="capability">
+                    <div class="capability-icon">🎲</div>
+                    <div class="capability-title">Simulação de Cenários</div>
+                    <div class="capability-desc">Testa diferentes alocações antes de implementar</div>
+                </div>
+                
+                <div class="capability">
+                    <div class="capability-icon">⚡</div>
+                    <div class="capability-title">Decisão Acelerada</div>
+                    <div class="capability-desc">Reduz tempo de análise de dias para minutos</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="workflow">
+            <div class="workflow-title">🔄 Fluxo de Trabalho Assistido</div>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Coleta Automática</div>
+                    <div class="step-desc">Dados consolidados de todos os canais</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Análise da IA</div>
+                    <div class="step-desc">Processamento de métricas e identificação de oportunidades</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Recomendação</div>
+                    <div class="step-desc">Sugestões de redistribuição com justificativa</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Validação Humana</div>
+                    <div class="step-desc">Profissional analisa e decide implementação</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Execução</div>
+                    <div class="step-desc">Ajustes aplicados nas plataformas</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="impact">
+            <div class="impact-card">
+                <div class="impact-icon">💡</div>
+                <div class="impact-label">Ganho Operacional</div>
+                <div class="impact-value">Decisões mais rápidas e embasadas</div>
+            </div>
+            
+            <div class="impact-card">
+                <div class="impact-icon">🎯</div>
+                <div class="impact-label">Eficiência</div>
+                <div class="impact-value">Redução de desperdício de budget</div>
+            </div>
+            
+            <div class="impact-card">
+                <div class="impact-icon">📊</div>
+                <div class="impact-label">Visibilidade</div>
+                <div class="impact-value">Clareza total sobre performance</div>
+            </div>
+            
+            <div class="impact-card">
+                <div class="impact-icon">⚙️</div>
+                <div class="impact-label">Escalabilidade</div>
+                <div class="impact-value">Gestão de múltiplos produtos/objetivos</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
